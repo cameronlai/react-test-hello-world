@@ -29,16 +29,16 @@ jobs:
          aws-region: ${{ vars.AWS_REGION}}
 
      - name: List s3 files
-       run: aws s3 ls s3://${{ env.AWS_BUCKET_NAME}}
+       run: aws s3 ls s3://${{ vars.AWS_BUCKET_NAME}}
          
      - name: Deploy static site to S3 bucket
-       run: aws s3 rm s3://${{ env.AWS_BUCKET_NAME}} --recursive
+       run: aws s3 rm s3://${{ vars.AWS_BUCKET_NAME}} --recursive
 
      - name: List s3 files 2
-       run: aws s3 ls s3://${{ env.AWS_BUCKET_NAME}}
+       run: aws s3 ls s3://${{ vars.AWS_BUCKET_NAME}}
          
      - name: Deploy static site to S3 bucket
-       run: aws s3 sync ./build s3://${{ env.AWS_BUCKET_NAME}}
+       run: aws s3 sync ./build s3://${{ vars.AWS_BUCKET_NAME}}
 
      - name: List s3 files 3
-       run: aws s3 ls s3://${{ env.AWS_BUCKET_NAME}}
+       run: aws s3 ls s3://${{ vars.AWS_BUCKET_NAME}}
