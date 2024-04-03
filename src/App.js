@@ -19,7 +19,7 @@ function App() {
         </a>
       </header>
       <body className="App-body">
-        Hello World Test!
+        Hello World Today!
       </body>
     </div>
   );
